@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <include
+                android:id="@+id/welcome_section"
+                layout="@layout/section_welcome_player"
+                android:layout_alignParentTop="true"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent" />
+            <include
+                android:id="@+id/friendRequest_section"
+                layout="@layout/section_friend_request"
+                android:layout_below="@+id/welcome_section"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent" />
+            <include
+                android:id="@+id/topGames_section"
+                layout="@layout/section_recycler_with_header_btn"
+                android:layout_below="@+id/friendRequest_section"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent" />
+            <include
+                android:id="@+id/strikersNews_section"
+                layout="@layout/section_recycler_with_header_btn"
+                android:layout_below="@+id/topGames_section"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"/>
+        </RelativeLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

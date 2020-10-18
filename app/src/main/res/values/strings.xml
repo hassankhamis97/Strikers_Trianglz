@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Strikers_Tr</string>
+    <string name="logo">Logo</string>
+    <string name="search">Search</string>
+    <string name="notification">Notification</string>
+    <string name="home">Home</string>
+    <string name="messages">Messages</string>
+    <string name="teams">Teams</string>
+    <string name="tournament">Tournament</string>
+    <string name="games">Games</string>
+    <string name="follow">Follow</string>
+    <string name="top_games">Top Games</string>
+    <string name="strikers_news">Strikers News</string>
+    <string name="get_started">Get Started</string>
+</resources>
