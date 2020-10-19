@@ -1,42 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
-    <ScrollView
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="vm"
+            type="com.example.strikers_tr.views.home.fragments.home.HomeViewModel" />
+    </data>
+    
+    <androidx.constraintlayout.widget.ConstraintLayout
+
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-        <RelativeLayout
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/homeAdapter_recyclerView"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
-            <include
-                android:id="@+id/welcome_section"
-                layout="@layout/section_welcome_player"
-                android:layout_alignParentTop="true"
-                android:layout_height="wrap_content"
-                android:layout_width="match_parent" />
-            <include
-                android:id="@+id/friendRequest_section"
-                layout="@layout/section_friend_request"
-                android:layout_below="@+id/welcome_section"
-                android:layout_height="wrap_content"
-                android:layout_width="match_parent" />
-            <include
-                android:id="@+id/topGames_section"
-                layout="@layout/section_recycler_with_header_btn"
-                android:layout_below="@+id/friendRequest_section"
-                android:layout_height="wrap_content"
-                android:layout_width="match_parent" />
-            <include
-                android:id="@+id/strikersNews_section"
-                layout="@layout/section_recycler_with_header_btn"
-                android:layout_below="@+id/topGames_section"
-                android:layout_height="wrap_content"
-                android:layout_width="match_parent"/>
-        </RelativeLayout>
+            android:layout_height="match_parent"
+            android:visibility="@{vm.isLoadingData() ? View.GONE : View.VISIBLE}"
+            app:homeDataList="@{vm.homeDataLiveData}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/loader_Lottie"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="1dp"
+            android:layout_marginEnd="1dp"
+            android:scaleType="centerInside"
+            android:visibility="@{vm.isLoadingData() ? View.VISIBLE : View.GONE}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/loader"
+            app:loaderStatus="@{vm.isLoadingData}"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-    </ScrollView>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
