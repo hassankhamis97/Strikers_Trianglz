@@ -3,18 +3,31 @@
 
     <item>
         <shape android:shape="rectangle" >
-            <solid android:color="@color/transparent_bg" />
+            <solid android:color="@android:color/transparent" />
         </shape>
     </item>
 
-    <item android:right="-400dp" android:left="-20dp" android:bottom="-20dp" android:width="50dp">
+    <item android:right="0dp" android:left="0dp" android:bottom="-20dp">
         <shape>
             <solid android:color="@android:color/transparent" />
             <stroke
-                android:width="2dp"
-                android:color="@color/pinkish_red" />
+                android:width="20dp"
+                android:color="@android:color/transparent" />
         </shape>
 
+    </item>
+    <item android:top="0dp" android:left="100dp"  android:right="100dp">
+        <shape>
+            <solid android:color="@android:color/transparent" />
+            <stroke
+                android:width="20dp"
+                android:color="@color/pinkish_red" />
+        </shape>
+    </item>
+    <item android:top="20dp">
+        <shape android:shape="rectangle" >
+            <solid android:color="#232323" />
+        </shape>
     </item>
 
 </layer-list>

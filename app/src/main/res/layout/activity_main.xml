@@ -127,7 +127,87 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:menu="@menu/nav_bottom_menu">
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="82dp"
+            android:orientation="horizontal"
+            android:paddingBottom="32dp"
+            android:weightSum="5"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
 
+            <LinearLayout
+                android:id="@+id/view_home"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:visibility="invisible"
+                android:orientation="vertical">
+
+                <include
+                    layout="@layout/navigation_bottom_top_decoration" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/view_games"
+
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:visibility="invisible"
+                android:orientation="vertical">
+
+
+                <include
+                    layout="@layout/navigation_bottom_top_decoration" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/view_tournaments"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:visibility="invisible"
+                android:orientation="vertical">
+                <include
+                    layout="@layout/navigation_bottom_top_decoration" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/view_teams"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:visibility="invisible">
+
+
+                <include
+                    layout="@layout/navigation_bottom_top_decoration" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/view_messages"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:visibility="invisible"
+                android:orientation="vertical">
+
+                <include
+                    layout="@layout/navigation_bottom_top_decoration" />
+
+
+            </LinearLayout>
+        </LinearLayout>
 <!--        <View-->
 <!--            android:id="@+id/view"-->
 <!--            android:layout_width="29dp"-->
