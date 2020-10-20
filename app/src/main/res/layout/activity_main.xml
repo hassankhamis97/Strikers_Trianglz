@@ -6,6 +6,98 @@
     android:layout_height="match_parent"
     tools:context=".views.home.MainActivity">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/base_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="63dp"
+        android:background="@color/transparent_bg"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_marginLeft="25dp"
+                android:layout_centerVertical="true"
+                app:layout_constraintBottom_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/group_5"
+                android:contentDescription="@string/logo" />
+
+            <ImageView
+                android:id="@+id/search"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="?android:attr/actionBarItemBackground"
+                android:clickable="true"
+                android:focusable="true"
+                android:padding="3dp"
+                android:layout_centerVertical="true"
+                android:src="@drawable/ic_search"
+                android:layout_toStartOf="@+id/notification_imageView"
+                android:layout_toLeftOf="@+id/notification_imageView"
+                android:layout_marginEnd="14dp"
+                android:layout_marginRight="14dp" />
+            <FrameLayout
+                android:id="@+id/notification_imageView"
+                android:background="?android:attr/actionBarItemBackground"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clipToPadding="false"
+                android:clickable="true"
+                android:focusable="true"
+                android:layout_centerVertical="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginEnd="20dp"
+                android:layout_marginRight="20dp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:src="@drawable/notifications_normal"/>
+
+                <TextView
+                    android:id="@+id/cart_badge"
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    android:layout_marginStart="17dp"
+                    android:layout_marginLeft="17dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/badge_background"
+                    android:gravity="center"
+                    android:padding="3dp"
+                    android:text="0"
+                    android:textColor="@android:color/white"
+                    android:textSize="10sp"
+                    android:visibility="visible" />
+
+            </FrameLayout>
+<!--            <ImageView-->
+<!--                android:id="@+id/notification_imageView"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:background="?android:attr/actionBarItemBackground"-->
+<!--                android:clickable="true"-->
+<!--                android:focusable="true"-->
+<!--                android:padding="3dp"-->
+<!--                android:layout_centerVertical="true"-->
+<!--                android:layout_alignParentEnd="true"-->
+<!--                android:layout_alignParentRight="true"-->
+<!--                android:layout_marginEnd="20dp"-->
+<!--                android:src="@drawable/notifications_normal"-->
+<!--                android:layout_marginRight="20dp" />-->
+        </RelativeLayout>
+    </androidx.appcompat.widget.Toolbar>
 
     <fragment
         android:id="@+id/navHostFragment"
@@ -13,10 +105,115 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:defaultNavHost="true"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavigation"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/base_toolbar"
+        app:navGraph="@navigation/navigation_main" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigation"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="@drawable/bottom_bar_menu_bg"
+        app:itemIconTint="@drawable/bottom_nav_icon_color_selector"
+        app:itemTextColor="@drawable/bottom_nav_icon_color_selector"
+        app:itemTextAppearanceActive="@style/BottomNavigationView.Active"
+        app:itemTextAppearanceInactive="@style/BottomNavigationView"
+        app:labelVisibilityMode="labeled"
+        android:paddingBottom="15dp"
+        app:itemIconSize="29dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:navGraph="@navigation/navigation_main" />
+        app:menu="@menu/nav_bottom_menu">
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="82dp"
+            android:orientation="horizontal"
+            android:paddingBottom="32dp"
+            android:weightSum="5"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <LinearLayout
+                android:id="@+id/view_home"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:visibility="invisible"
+                android:orientation="vertical">
+
+                <include
+                    layout="@layout/navigation_bottom_top_decoration" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/view_games"
+
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:visibility="invisible"
+                android:orientation="vertical">
+
+
+                <include
+                    layout="@layout/navigation_bottom_top_decoration" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/view_tournaments"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:visibility="invisible"
+                android:orientation="vertical">
+                <include
+                    layout="@layout/navigation_bottom_top_decoration" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/view_teams"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:visibility="invisible">
+
+
+                <include
+                    layout="@layout/navigation_bottom_top_decoration" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/view_messages"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:visibility="invisible"
+                android:orientation="vertical">
+
+                <include
+                    layout="@layout/navigation_bottom_top_decoration" />
+
+
+            </LinearLayout>
+        </LinearLayout>
+<!--        <View-->
+<!--            android:id="@+id/view"-->
+<!--            android:layout_width="29dp"-->
+<!--            android:layout_height="2dp"-->
+<!--            android:layout_gravity="top"-->
+<!--            android:background="@color/pinkish_red" />-->
+    </com.google.android.material.bottomnavigation.BottomNavigationView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
