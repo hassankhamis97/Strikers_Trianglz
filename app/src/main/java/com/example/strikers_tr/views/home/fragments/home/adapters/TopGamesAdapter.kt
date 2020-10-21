@@ -9,7 +9,8 @@ import com.example.strikers_tr.R
 import com.example.strikers_tr.databinding.ItemGameBinding
 import com.example.strikers_tr.model.Game
 
-class TopGamesAdapter(var topGamesList: ArrayList<Game>) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class TopGamesAdapter() : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+    var topGamesList: ArrayList<Game> = ArrayList()
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int

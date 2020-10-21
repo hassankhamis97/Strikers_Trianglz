@@ -162,14 +162,17 @@ class HomeSectionalAdapter(): RecyclerView.Adapter<RecyclerView.ViewHolder>(), I
     }
     inner class TopGamesViewHolder(private val binding: SectionTopGamesBinding) : RecyclerView.ViewHolder(binding.root) {
         internal val games_recyclerView = binding.root.findViewById<RecyclerView>(R.id.games_recyclerView)
-
-        fun bind(topGames: TopGames) {
+        val gamesAdapter by lazy {
+            TopGamesAdapter()
+        }
+        init {
             val layoutManager = LinearLayoutManager(games_recyclerView.context, LinearLayoutManager.HORIZONTAL, false)
             games_recyclerView.layoutManager = layoutManager
-            games_recyclerView.adapter =
-                TopGamesAdapter(
-                    topGames.topGamesList
-                )
+            games_recyclerView.adapter = gamesAdapter
+
+        }
+        fun bind(topGames: TopGames) {
+            gamesAdapter.topGamesList = topGames.topGamesList
             binding.apply {
                 this.topGames = topGames
             }

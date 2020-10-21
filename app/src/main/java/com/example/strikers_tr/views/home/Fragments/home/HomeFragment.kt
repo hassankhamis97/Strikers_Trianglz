@@ -52,13 +52,11 @@ class HomeFragment: Fragment() {
         val recyclerView = root.findViewById<RecyclerView>(R.id.homeAdapter_recyclerView)
         val layoutManager = LinearLayoutManager(requireContext())
         recyclerView.layoutManager = layoutManager
-        recyclerView.adapter =
-            HomeSectionalAdapter()
+        recyclerView.adapter = HomeSectionalAdapter()
     }
 
     override fun onDestroyView() {
         viewVavigationDecor?.visibility = View.INVISIBLE
         super.onDestroyView()
     }
-
 }

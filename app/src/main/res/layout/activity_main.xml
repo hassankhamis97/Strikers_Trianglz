@@ -208,12 +208,6 @@
 
             </LinearLayout>
         </LinearLayout>
-<!--        <View-->
-<!--            android:id="@+id/view"-->
-<!--            android:layout_width="29dp"-->
-<!--            android:layout_height="2dp"-->
-<!--            android:layout_gravity="top"-->
-<!--            android:background="@color/pinkish_red" />-->
     </com.google.android.material.bottomnavigation.BottomNavigationView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
