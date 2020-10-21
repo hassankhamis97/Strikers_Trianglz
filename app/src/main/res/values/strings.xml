@@ -11,5 +11,9 @@
     <string name="follow">Follow</string>
     <string name="top_games">Top Games</string>
     <string name="strikers_news">Strikers News</string>
-    <string name="get_started">Get Started</string>
+    <string name="get_started">Get started</string>
+    <string name="accept">Accept</string>
+    <string name="reject">Reject</string>
+    <string name="strickers_news">Strickers News</string>
+    <string name="open_chat">Open Chat</string>
 </resources>
