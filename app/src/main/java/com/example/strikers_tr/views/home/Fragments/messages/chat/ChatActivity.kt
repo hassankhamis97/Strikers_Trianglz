@@ -70,6 +70,7 @@ class ChatActivity : AppCompatActivity(), IChatView {
                     Player("2","Mohamed",R.drawable.player)
             )
             sendMessage(message_editText.text.toString(),senders.random())
+            message_editText.text.clear()
         }
     }
 
@@ -101,11 +102,12 @@ class ChatActivity : AppCompatActivity(), IChatView {
     }
 
     override fun sendMessage(messageBody: String, sender: Player) {
-        val message = Message(sender,messageBody)
-        message_editText.text.clear()
-        adapter.messages.add(0, message)
-        adapter.notifyItemInserted(0)
-        recyclerView.scrollToPosition(0)
+        if (messageBody.trim().isNotEmpty()) {
+            val message = Message(sender, messageBody)
+            adapter.messages.add(0, message)
+            adapter.notifyItemInserted(0)
+            recyclerView.scrollToPosition(0)
+        }
     }
 
 

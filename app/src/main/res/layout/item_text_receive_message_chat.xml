@@ -7,33 +7,34 @@
             name="message"
             type="com.example.strikers_tr.model.chat.Message" />
     </data>
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="38dp"
+        android:paddingTop="12.6dp"
+        android:paddingRight="57dp">
+
+        <TextView
+            android:id="@+id/messageBody_textView"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingLeft="43dp"
-            android:paddingTop="12.6dp"
-            android:paddingRight="57dp">
+            android:layout_marginTop="12.5dp"
+            android:layout_marginEnd="50dp"
+            android:layout_marginRight="50dp"
+            android:background="@drawable/ballon_receive_message_without_bubble"
+            android:fontFamily="@font/cairo"
+            android:paddingLeft="18dp"
+            android:paddingTop="10dp"
+            android:paddingRight="18dp"
+            android:paddingBottom="10dp"
+            android:text="@{message.body}"
+            android:textSize="14.4sp"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
 
-            <TextView
-                android:id="@+id/messageBody_textView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="12.5dp"
-                android:layout_marginEnd="50dp"
-                android:layout_marginRight="100dp"
-                android:background="@drawable/ballon_receive_message_without_bubble"
-                android:fontFamily="@font/cairo"
-                android:paddingLeft="18dp"
-                android:paddingTop="10dp"
-                android:paddingRight="18dp"
-                android:paddingBottom="10dp"
-                android:text="@{message.body}"
-                android:textSize="14.4sp"
-                app:layout_constrainedWidth="true"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
