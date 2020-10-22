@@ -16,4 +16,9 @@
     <string name="reject">Reject</string>
     <string name="strickers_news">Strickers News</string>
     <string name="open_chat">Open Chat</string>
+    <string name="join_now">Join Now!</string>
+    <string name="view">View</string>
+    <string name="winners">Winners</string>
+    <string name="comunity">Comunity</string>
+    <string name="news">News</string>
 </resources>
