@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/homeFragment"
+        android:title="@string/home"
+        android:icon="@drawable/home_pressed" />
+    <item
+        android:id="@+id/gamesFragment"
+        android:title="@string/games"
+        android:icon="@drawable/games_normal" />
+    <item
+        android:id="@+id/tournamentFragment"
+        android:title="@string/tournament"
+        android:icon="@drawable/tournaments_normal" />
+    <item
+        android:id="@+id/teamsFragment"
+        android:title="@string/teams"
+        android:icon="@drawable/teams_normal" />
+    <item
+        android:id="@+id/messagesFragment"
+        android:title="@string/messages"
+        android:icon="@drawable/messages_normal" />
+</menu>

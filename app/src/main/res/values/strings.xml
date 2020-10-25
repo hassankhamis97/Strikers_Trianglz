@@ -11,5 +11,18 @@
     <string name="follow">Follow</string>
     <string name="top_games">Top Games</string>
     <string name="strikers_news">Strikers News</string>
-    <string name="get_started">Get Started</string>
+    <string name="get_started">Get started</string>
+    <string name="accept">Accept</string>
+    <string name="reject">Reject</string>
+    <string name="strickers_news">Strickers News</string>
+    <string name="open_chat">Open Chat</string>
+    <string name="join_now">Join Now!</string>
+    <string name="view">View</string>
+    <string name="winners">Winners</string>
+    <string name="comunity">Comunity</string>
+    <string name="news">News</string>
+    <string name="top_players_amp_teams"><![CDATA[Top players & Teams]]></string>
+    <string name="likes">Likes</string>
+    <string name="dislikes">Dislikes</string>
+    <string name="start_chat">Start chat</string>
 </resources>

@@ -9,6 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MaterialComponents.NoActionBar">
+        <activity android:name=".views.gamedetail.GameDetailActivity"></activity>
+        <activity
+            android:name=".views.home.fragments.messages.chat.ChatActivity"
+            android:windowSoftInputMode="adjustPan" />
         <activity android:name=".views.home.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

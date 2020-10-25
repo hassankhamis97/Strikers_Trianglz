@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <dimen name="bottom_bar_text_font_size" format="float">9.6sp</dimen>
+    <dimen name="design_bottom_navigation_text_size" tools:override="true">5sp</dimen>
+    <dimen name="design_bottom_navigation_active_text_size" tools:override="true">5sp</dimen>
 </resources>

@@ -14,5 +14,11 @@
     <color name="pinkish_red">#e52a35</color>
     <color name="brown_grey_four">#a3a3a3</color>
     <color name="black_two_70">#b32a2a2a</color>
+    <color name="black_two_50">#802A2A2A</color>
     <color name="kermit_green">#63ba00</color>
+    <color name="gray_white">#5EFFFFFF</color>
+    <color name="dark_lime_green">#72d500</color>
+    <color name="black_three">#3a3a3a</color>
+    <color name="brown_grey_five">#979797</color>
+    <color name="brown_grey_two">#9a9a9a</color>
 </resources>

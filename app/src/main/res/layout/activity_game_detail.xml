@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="gameDetailsVM"
+            type="com.example.strikers_tr.views.gamedetail.GameDetailsViewModel" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+
+        <LinearLayout
+            android:elevation="2dp"
+            android:id="@+id/toolbarBackground_layout"
+            android:layout_width="match_parent"
+            android:layout_height="75dp"
+            android:background="@color/black"
+            android:alpha="0"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <TextView
+                android:id="@+id/toolbar_title_textView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginStart="60dp"
+                android:layout_marginLeft="60dp"
+                android:layout_marginEnd="60dp"
+                android:layout_marginRight="60dp"
+                android:layout_marginBottom="7dp"
+                android:ellipsize="end"
+                android:foregroundGravity="center"
+                android:gravity="center_vertical|center|bottom"
+                android:singleLine="true"
+                android:text="FIFA 21"
+                android:textColor="@android:color/white"
+                android:textSize="14.4sp"
+                android:textStyle="bold"
+                android:visibility="visible"
+                tools:text="On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain. These cases are perfectly simple and easy to distinguish. In a free hour, when our power of choice is untrammelled and when nothing prevents our being able to do what we like best, every pleasure is to be welcomed and every pain avoided. But in certain circumstances and owing to the claims of duty or the obligations of business it will frequently occur that pleasures have to be repudiated and annoyances accepted. The wise man therefore always holds in these matters to this principle of selection: he rejects pleasures to secure other greater pleasures, or else he endures pains to avoid worse pains" />
+
+        </LinearLayout>
+        <ImageView
+            android:id="@+id/back_imageView"
+            android:layout_width="29dp"
+            android:layout_height="29dp"
+            android:layout_marginStart="22dp"
+            android:layout_marginLeft="22dp"
+            android:layout_marginTop="40dp"
+            android:elevation="3dp"
+            android:src="@drawable/back"
+            android:clickable="true"
+            android:focusable="true"
+            android:background="?android:attr/selectableItemBackground"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:id="@+id/co_profile_activity_root_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/black"
+            android:visibility="visible"
+            app:layout_constrainedHeight="true"
+            app:layout_constraintBottom_toTopOf="@+id/constraintLayout2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.appbar.AppBarLayout
+                android:id="@+id/appbar_profile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.appbar.CollapsingToolbarLayout
+                    android:id="@+id/collapse_toolbar_profile"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:contentScrim="@color/black"
+                    app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+                    <RelativeLayout
+                        android:id="@+id/rel_top"
+                        android:layout_width="match_parent"
+                        android:layout_height="277dp">
+
+                        <ImageView
+                            android:id="@+id/img_bg_placeholder_profile"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/fifa21"
+                            app:layout_collapseMode="parallax"
+                            app:layout_collapseParallaxMultiplier="1" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="74dp"
+                            android:layout_alignParentBottom="true"
+                            android:background="#80000000"
+                            android:ellipsize="end"
+                            android:fontFamily="@font/cairo"
+                            android:gravity="center_vertical"
+                            android:maxLines="1"
+                            android:paddingLeft="22dp"
+                            android:paddingRight="22dp"
+                            android:text="FIFA 21"
+                            android:textColor="@color/white"
+                            android:textSize="26.9sp"
+                            android:textStyle="bold" />
+                    </RelativeLayout>
+
+                    <FrameLayout
+                        android:id="@+id/frame_detail_profile"
+                        android:layout_width="match_parent"
+                        android:layout_height="570dp"
+                        android:layout_gravity="center|center_horizontal"
+                        android:layout_marginTop="185dp"
+                        android:background="@color/black"
+                        android:orientation="vertical"
+                        app:layout_collapseMode="none"
+                        app:layout_collapseParallaxMultiplier="0">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <include
+                                android:id="@+id/topPart_inludeLayout"
+                                layout="@layout/item_game_detail_top_part_section"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <androidx.recyclerview.widget.RecyclerView
+                                android:id="@+id/topPlayers_recyclerView"
+                                android:layout_width="match_parent"
+                                android:layout_height="100dp"
+                                android:layout_marginStart="22dp"
+                                android:layout_marginLeft="22dp"
+                                android:layout_marginEnd="22dp"
+                                android:layout_marginRight="22dp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/topPart_inludeLayout"
+                                app:topPlayers="@{gameDetailsVM.topPlayersLiveData}" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </FrameLayout>
+
+                    <androidx.appcompat.widget.Toolbar
+                        android:id="@+id/toolbar_profile"
+                        android:layout_width="match_parent"
+                        android:layout_height="75dp"
+                        android:layout_marginBottom="?attr/actionBarSize"
+                        android:gravity="top|center"
+                        app:layout_anchor="@id/frame_detail_profile"
+                        app:layout_collapseMode="pin"
+                        app:title="">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/toolbarHeaderView_layout"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="bottom"
+                            android:orientation="horizontal">
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </androidx.appcompat.widget.Toolbar>
+
+                    <com.google.android.material.tabs.TabLayout
+                        android:id="@+id/gameDetails_tabLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="?android:attr/actionBarSize"
+                        android:layout_gravity="bottom"
+                        android:background="@drawable/line_decor_tab_layout"
+                        android:textAlignment="center"
+                        app:tabIndicatorColor="@color/pinkish_red"
+                        app:tabIndicatorFullWidth="false"
+                        app:tabSelectedTextColor="@color/white"
+                        tools:ignore="RtlCompat">
+
+                        <com.google.android.material.tabs.TabItem
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="22dp"
+                            android:text="@string/tournament" />
+
+                        <com.google.android.material.tabs.TabItem
+                            android:id="@+id/chat_tab"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/comunity" />
+
+                        <com.google.android.material.tabs.TabItem
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/news" />
+
+                    </com.google.android.material.tabs.TabLayout>
+                </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+            </com.google.android.material.appbar.AppBarLayout>
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/gameDetails_viewPager"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/black"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout2"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:background="@drawable/bottom_bar_menu_bg"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/favourite_cardView"
+                android:layout_width="51dp"
+                android:layout_height="49dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginLeft="32dp"
+                android:layout_marginTop="9dp"
+                app:cardCornerRadius="15.4dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="?android:attr/actionBarItemBackground"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" >
+
+                <ImageView
+                    android:id="@+id/imageView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    app:srcCompat="@drawable/ic_share_dark" />
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/share_cardView"
+                android:layout_width="51dp"
+                android:layout_height="49dp"
+                android:layout_marginStart="9dp"
+                android:layout_marginLeft="9dp"
+                android:layout_marginTop="9dp"
+                app:cardCornerRadius="15.4dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="?android:attr/actionBarItemBackground"
+                app:layout_constraintStart_toEndOf="@+id/favourite_cardView"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/imageView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    app:srcCompat="@drawable/ic_favourite_normal" />
+
+            </androidx.cardview.widget.CardView>
+
+            <Button
+                android:id="@+id/button"
+                style="@style/Widget.AppCompat.Button"
+                android:layout_width="175dp"
+                android:layout_height="48dp"
+                android:layout_marginTop="9dp"
+                android:layout_marginEnd="31dp"
+                android:layout_marginRight="31dp"
+                android:background="@drawable/rounded_btn"
+                android:ellipsize="end"
+                android:fontFamily="@font/cairo"
+                android:maxLines="1"
+                android:paddingLeft="30dp"
+                android:paddingTop="0dp"
+                android:paddingRight="30dp"
+                android:paddingBottom="0dp"
+                android:text="@string/follow"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="13.51sp"
+                app:backgroundTint="@color/pinkish_red"
+                app:cornerRadius="15dp"
+                app:layout_constrainedWidth="true"
+                app:layout_constraintCircleRadius="15dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toEndOf="@+id/share_cardView"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain. These cases are perfectly simple and easy to distinguish. In a free hour, when our power of choice is untrammelled and when nothing prevents our being able to do what we like best, every pleasure is to be welcomed and every pain avoided. But in certain circumstances and owing to the claims of duty or the obligations of business it will frequently occur that pleasures have to be repudiated and annoyances accepted. The wise man therefore always holds in these matters to this principle of selection: he rejects pleasures to secure other greater pleasures, or else he endures pains to avoid worse pains." />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

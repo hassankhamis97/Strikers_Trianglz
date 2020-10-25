@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="message"
+            type="com.example.strikers_tr.model.chat.Message" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="57dp"
+        android:paddingTop="27.8dp"
+        android:paddingRight="25.5dp">
+
+        <TextView
+            android:id="@+id/messageBody_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="12.5dp"
+            android:background="@drawable/ballon_send_message"
+            android:fontFamily="@font/cairo"
+            android:paddingLeft="18dp"
+            android:paddingTop="11dp"
+            android:paddingRight="28dp"
+            android:paddingBottom="11dp"
+            android:text="@{message.body}"
+            android:textSize="14.4sp"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
