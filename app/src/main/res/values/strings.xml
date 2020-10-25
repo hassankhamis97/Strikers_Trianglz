@@ -21,4 +21,8 @@
     <string name="winners">Winners</string>
     <string name="comunity">Comunity</string>
     <string name="news">News</string>
+    <string name="top_players_amp_teams"><![CDATA[Top players & Teams]]></string>
+    <string name="likes">Likes</string>
+    <string name="dislikes">Dislikes</string>
+    <string name="start_chat">Start chat</string>
 </resources>

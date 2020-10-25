@@ -19,4 +19,6 @@
     <color name="gray_white">#5EFFFFFF</color>
     <color name="dark_lime_green">#72d500</color>
     <color name="black_three">#3a3a3a</color>
+    <color name="brown_grey_five">#979797</color>
+    <color name="brown_grey_two">#9a9a9a</color>
 </resources>

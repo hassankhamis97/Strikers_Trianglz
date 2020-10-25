@@ -28,9 +28,7 @@ import com.example.strikers_tr.model.Tournament
 class TournamentSection (
         var values: ArrayList<Tournament>,
         var sectionName: String
-): GameDetailsData() {
-    override fun getType() = TYPE_TOURNAMENT
-}
+)
 //
 //class OngoingTournament (
 //        var ongoing: ArrayList<Tournament>,

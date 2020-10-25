@@ -1,21 +1,224 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="0dp"
-        android:layout_height="500dp"
-        android:scaleType="centerCrop"
-        android:src="@drawable/player2"
+
+    <RelativeLayout
+        android:id="@+id/notification_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="19.2dp"
+        android:layout_marginLeft="19.2dp"
+        android:layout_marginTop="22dp"
+        android:layout_marginEnd="19.2dp"
+        android:layout_marginRight="19.2dp"
+        android:orientation="horizontal"
+        app:layout_constrainedWidth="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_toStartOf="@+id/notification_switch"
+            android:layout_toLeftOf="@+id/notification_switch"
+            android:ellipsize="end"
+            android:fontFamily="@font/cairo"
+            android:maxLines="2"
+            android:text="Get notification for tornaments news, posts and game updates" />
+
+        <!--        <Switch-->
+        <!--            android:id="@+id/notification_switch"-->
+        <!--            android:layout_width="47dp"-->
+        <!--            android:layout_height="29dp"-->
+        <!--            android:layout_alignParentEnd="true"-->
+        <!--            android:layout_alignParentRight="true"-->
+        <!--            android:layout_centerVertical="true"-->
+        <!--            android:layout_marginEnd="27.3dp"-->
+        <!--            android:layout_marginRight="27.3dp"-->
+        <!--            android:importantForAutofill="yes" />-->
+
+        <com.github.angads25.toggle.widget.LabeledSwitch
+            android:id="@+id/notification_switch"
+            android:layout_width="47dp"
+            android:layout_height="29dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="5.3dp"
+            android:layout_marginRight="27.3dp"
+            android:textSize="0sp"
+            app:colorOn="@color/white"
+            app:colorOff="#969696"
+
+            app:colorBorder="#969696"
+            app:on="false" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/gamesType_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="22dp"
+        android:layout_marginLeft="22dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="22dp"
+        android:layout_marginRight="22dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/notification_layout">
+
+        <ImageView
+            android:layout_width="34dp"
+            android:layout_height="34dp"
+            android:layout_marginRight="15dp"
+            android:src="@drawable/playstation_games" />
+
+        <ImageView
+            android:layout_width="34dp"
+            android:layout_height="34dp"
+            android:layout_marginRight="15dp"
+            android:src="@drawable/xbox_games" />
+
+        <ImageView
+            android:layout_width="34dp"
+            android:layout_height="34dp"
+            android:layout_marginRight="15dp"
+            android:src="@drawable/pc_games" />
+
+        <ImageView
+            android:layout_width="34dp"
+            android:layout_height="34dp"
+            android:src="@drawable/mobile_games" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/followers_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="22dp"
+        android:layout_marginLeft="22dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="22dp"
+        android:layout_marginRight="22dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/gamesType_layout">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/playstation_games"
+            android:layout_marginRight="26dp"
+            android:text="1,390  Followers"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:fontFamily="@font/cairo"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/xbox_games"
+            android:text="459  Likes"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:fontFamily="@font/cairo"/>
+    </LinearLayout>
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="7dp"
+        android:background="@color/brown_grey_five"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/followers_layout"
+        tools:ignore="MissingConstraints" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/request_layoutCV"
+        android:layout_width="0dp"
+        android:layout_height="58dp"
+        android:layout_marginStart="22dp"
+        android:layout_marginLeft="22dp"
+        android:layout_marginTop="23.7dp"
+        android:layout_marginEnd="22dp"
+        android:layout_marginRight="22dp"
+        android:background="?attr/selectableItemBackground"
+        android:padding="16dp"
+        app:cardCornerRadius="15.4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view">
+
+        <ImageView
+            android:id="@+id/imageButton"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginBottom="1dp"
+            android:background="?android:attr/actionBarItemBackground"
+            app:srcCompat="@drawable/ic_host_tournament" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="54dp"
+            android:layout_marginLeft="54dp"
+            android:ellipsize="end"
+            android:fontFamily="@font/cairo"
+            android:maxLines="1"
+            android:text="Request to host tournament"
+            android:textColor="@color/white"
+            android:textSize="14.4sp"
+            android:textStyle="bold" />
+
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="13dp"
+        android:layout_marginBottom="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/request_layoutCV">
+
+        <TextView
+            android:id="@+id/sectionName_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginLeft="24dp"
+            android:gravity="center_horizontal|center_vertical"
+            android:text="@string/top_players_amp_teams"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="14.4sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
+<!--</layout>-->
 
 <!--<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
 <!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->

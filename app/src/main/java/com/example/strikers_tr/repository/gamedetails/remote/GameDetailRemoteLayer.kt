@@ -1,10 +1,8 @@
 package com.example.strikers_tr.repository.gamedetails.remote
 
 import com.example.strikers_tr.R
-import com.example.strikers_tr.model.Comunity
-import com.example.strikers_tr.model.GameType
-import com.example.strikers_tr.model.News
-import com.example.strikers_tr.model.Tournament
+import com.example.strikers_tr.model.*
+import com.example.strikers_tr.model.gamedetails.TopPlayers
 import com.example.strikers_tr.model.gamedetails.TournamentSection
 import com.example.strikers_tr.repository.gamedetails.protocol.IGameDetailRepository
 import kotlinx.coroutines.Dispatchers
@@ -51,24 +49,34 @@ class GameDetailRemoteLayer: IGameDetailRepository {
         val tournamentSection = TournamentSection(tournaments,"Completed")
         return@withContext tournamentSection
     }
-    override suspend fun fetchComunity(): ArrayList<Comunity> = withContext(Dispatchers.IO) {
-        var comunities = ArrayList<Comunity> (listOf(
-                Comunity("Hassan",R.drawable.player2,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pretium pretium tempor. arcu aliquet, molestie justo at, auctor nunc. Phasellus ligula ipsum, volutpat eget semper id, viverra eget nibh. Suspendisse luctus mattis cursus. Nam consectetur ante at nisl hendrerit gravida. Donec vehicula rhoncus mattis. Mauris dignissim semper mattis. Fusce porttitor a mi at suscipit. Praesent facilisis dolor sapien, vel sodales augue mollis ut. Mauris venenatis magna eu tortor posuere luctus. Aenean tincidunt turpis sed dui aliquam vehicula. Praesent nec elit non dolor consectetur tincidunt sed in felis. Donec elementum, lacus at mattis tincidunt, eros magna faucibus sem, in condimentum est augue tristique risus.","22 June 2020",460,89,true),
-                Comunity("Hassan",R.drawable.player2,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pretium pretium tempor. arcu aliquet, molestie justo at, auctor nunc. Phasellus ligula ipsum, volutpat eget semper id, viverra eget nibh. Suspendisse luctus mattis cursus. Nam consectetur ante at nisl hendrerit gravida. Donec vehicula rhoncus mattis. Mauris dignissim semper mattis. Fusce porttitor a mi at suscipit. Praesent facilisis dolor sapien, vel sodales augue mollis ut. Mauris venenatis magna eu tortor posuere luctus. Aenean tincidunt turpis sed dui aliquam vehicula. Praesent nec elit non dolor consectetur tincidunt sed in felis. Donec elementum, lacus at mattis tincidunt, eros magna faucibus sem, in condimentum est augue tristique risus.","22 June 2020",460,89,true),
-                Comunity("Hassan",R.drawable.player2,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pretium pretium tempor. arcu aliquet, molestie justo at, auctor nunc. Phasellus ligula ipsum, volutpat eget semper id, viverra eget nibh. Suspendisse luctus mattis cursus. Nam consectetur ante at nisl hendrerit gravida. Donec vehicula rhoncus mattis. Mauris dignissim semper mattis. Fusce porttitor a mi at suscipit. Praesent facilisis dolor sapien, vel sodales augue mollis ut. Mauris venenatis magna eu tortor posuere luctus. Aenean tincidunt turpis sed dui aliquam vehicula. Praesent nec elit non dolor consectetur tincidunt sed in felis. Donec elementum, lacus at mattis tincidunt, eros magna faucibus sem, in condimentum est augue tristique risus.","22 June 2020",460,89,true),
-                Comunity("Hassan",R.drawable.player2,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pretium pretium tempor. arcu aliquet, molestie justo at, auctor nunc. Phasellus ligula ipsum, volutpat eget semper id, viverra eget nibh. Suspendisse luctus mattis cursus. Nam consectetur ante at nisl hendrerit gravida. Donec vehicula rhoncus mattis. Mauris dignissim semper mattis. Fusce porttitor a mi at suscipit. Praesent facilisis dolor sapien, vel sodales augue mollis ut. Mauris venenatis magna eu tortor posuere luctus. Aenean tincidunt turpis sed dui aliquam vehicula. Praesent nec elit non dolor consectetur tincidunt sed in felis. Donec elementum, lacus at mattis tincidunt, eros magna faucibus sem, in condimentum est augue tristique risus.","22 June 2020",460,89,true)
+    override suspend fun fetchComunity(): ArrayList<Community> = withContext(Dispatchers.IO) {
+        var comunities = ArrayList<Community> (listOf(
+                Community("Hassan",R.drawable.player2,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pretium pretium tempor. arcu aliquet, molestie justo at, auctor nunc. Phasellus ligula ipsum, volutpat eget semper id, viverra eget nibh. Suspendisse luctus mattis cursus. Nam consectetur ante at nisl hendrerit gravida. Donec vehicula rhoncus mattis. Mauris dignissim semper mattis. Fusce porttitor a mi at suscipit. Praesent facilisis dolor sapien, vel sodales augue mollis ut. Mauris venenatis magna eu tortor posuere luctus. Aenean tincidunt turpis sed dui aliquam vehicula. Praesent nec elit non dolor consectetur tincidunt sed in felis. Donec elementum, lacus at mattis tincidunt, eros magna faucibus sem, in condimentum est augue tristique risus.","22 June 2020",460,89,true),
+                Community("Hassan",R.drawable.player2,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pretium pretium tempor. arcu aliquet, molestie justo at, auctor nunc. Phasellus ligula ipsum, volutpat eget semper id, viverra eget nibh. Suspendisse luctus mattis cursus. Nam consectetur ante at nisl hendrerit gravida. Donec vehicula rhoncus mattis. Mauris dignissim semper mattis. Fusce porttitor a mi at suscipit. Praesent facilisis dolor sapien, vel sodales augue mollis ut. Mauris venenatis magna eu tortor posuere luctus. Aenean tincidunt turpis sed dui aliquam vehicula. Praesent nec elit non dolor consectetur tincidunt sed in felis. Donec elementum, lacus at mattis tincidunt, eros magna faucibus sem, in condimentum est augue tristique risus.","22 June 2020",460,8960,false),
+                Community("Hassan",R.drawable.player2,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pretium pretium tempor. arcu aliquet, molestie justo at, auctor nunc. Phasellus ligula ipsum, volutpat eget semper id, viverra eget nibh. Suspendisse luctus mattis cursus. Nam consectetur ante at nisl hendrerit gravida. Donec vehicula rhoncus mattis. Mauris dignissim semper mattis. Fusce porttitor a mi at suscipit. Praesent facilisis dolor sapien, vel sodales augue mollis ut. Mauris venenatis magna eu tortor posuere luctus. Aenean tincidunt turpis sed dui aliquam vehicula. Praesent nec elit non dolor consectetur tincidunt sed in felis. Donec elementum, lacus at mattis tincidunt, eros magna faucibus sem, in condimentum est augue tristique risus.","22 June 2020",460,89,false),
+                Community("Hassan",R.drawable.player2,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pretium pretium tempor. arcu aliquet, molestie justo at, auctor nunc. Phasellus ligula ipsum, volutpat eget semper id, viverra eget nibh. Suspendisse luctus mattis cursus. Nam consectetur ante at nisl hendrerit gravida. Donec vehicula rhoncus mattis. Mauris dignissim semper mattis. Fusce porttitor a mi at suscipit. Praesent facilisis dolor sapien, vel sodales augue mollis ut. Mauris venenatis magna eu tortor posuere luctus. Aenean tincidunt turpis sed dui aliquam vehicula. Praesent nec elit non dolor consectetur tincidunt sed in felis. Donec elementum, lacus at mattis tincidunt, eros magna faucibus sem, in condimentum est augue tristique risus.","22 June 2020",460,89,true)
         ))
         return@withContext comunities
     }
 
-    override suspend fun fetchNews(): ArrayList<News> = withContext(Dispatchers.IO) {
-        var news = ArrayList<News> (listOf(
-                News("Social video games to play during the coronavirus quarantine",R.drawable.pes,"22 June 2020"),
-                News("Social video games to play during the coronavirus quarantine",R.drawable.pes,"22 June 2020"),
-                News("Social video games to play during the coronavirus quarantine",R.drawable.pes,"22 June 2020"),
-                News("Social video games to play during the coronavirus quarantine",R.drawable.pes,"22 June 2020"),
-                News("Social video games to play during the coronavirus quarantine",R.drawable.pes,"22 June 2020")
+    override suspend fun fetchNews(): ArrayList<StrikersNew> = withContext(Dispatchers.IO) {
+        var news = ArrayList<StrikersNew> (listOf(
+                StrikersNew("Social video games to play during the coronavirus quarantine",R.drawable.pes,"22 June 2020",false),
+                StrikersNew("Social video games to play during the coronavirus quarantine",R.drawable.pes,"22 June 2020",false),
+                StrikersNew("Social video games to play during the coronavirus quarantine",R.drawable.pes,"22 June 2020",false),
+                StrikersNew("Social video games to play during the coronavirus quarantine",R.drawable.pes,"22 June 2020",false),
+                StrikersNew("Social video games to play during the coronavirus quarantine",R.drawable.pes,"22 June 2020",false)
         ))
         return@withContext news
+    }
+
+    override suspend fun fetchTopPlayersDetailsData(): TopPlayers = withContext(Dispatchers.IO) {
+        val players = ArrayList<Player> (listOf(
+            Player("0","Ahmed",R.drawable.player),
+            Player("1","Ahmed",R.drawable.player2 ),
+            Player("2","Mohamed",R.drawable.player)
+        ))
+        return@withContext TopPlayers(players = players)
+
     }
 }
