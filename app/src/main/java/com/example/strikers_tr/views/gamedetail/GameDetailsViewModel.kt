@@ -14,7 +14,6 @@ class GameDetailsViewModel: ViewModel() {
     }
 
 
-//    val isLoadingData = MutableLiveData<Boolean>()
 
     private val gameDetailsRepository by lazy {
         GameDetailsRepository.instance
@@ -22,7 +21,6 @@ class GameDetailsViewModel: ViewModel() {
 
     fun fetchTopPlayersDetailsData() {
         viewModelScope.launch {
-//            isLoadingData.postValue(true)
             fillTopPlayersDetailsData(gameDetailsRepository.fetchTopPlayersDetailsData())
         }
     }
@@ -30,24 +28,5 @@ class GameDetailsViewModel: ViewModel() {
     private fun fillTopPlayersDetailsData(topPlayers: TopPlayers) {
         topPlayersLiveData.postValue(topPlayers)
     }
-
-//
-//    suspend fun fetchComunity() {
-//        var gameDetailsData = gameDetailsDataLiveData.value
-//        for (index in (gameDetailsData?.size!! - 1) downTo 2) {
-//            gameDetailsData.removeAt(index)
-//        }
-//        gameDetailsData.addAll(gameDetailsRepository.fetchComunity())
-//        fillGameDetailsData(gameDetailsData)
-//    }
-//
-//    suspend fun fetchNews() {
-//        var gameDetailsData = gameDetailsDataLiveData.value
-//        for (index in (gameDetailsData?.size!! - 1) downTo 2) {
-//            gameDetailsData.removeAt(index)
-//        }
-//        gameDetailsData.addAll(gameDetailsRepository.fetchNews())
-//        fillGameDetailsData(gameDetailsData)
-//    }
 
 }

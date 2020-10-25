@@ -63,7 +63,6 @@ class TopPlayersGameDetailAdapter: RecyclerView.Adapter<RecyclerView.ViewHolder>
         @BindingAdapter("topPlayers")
         fun RecyclerView.bindItems(items: MutableLiveData<TopPlayers>) {
             val adapter = adapter as TopPlayersGameDetailAdapter
-//            adapter.topPlayers = items.players
             items.observeForever {
                 adapter.topPlayers = it.players
                 adapter.notifyDataSetChanged()

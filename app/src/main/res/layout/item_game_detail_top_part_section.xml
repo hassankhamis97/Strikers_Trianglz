@@ -37,17 +37,6 @@
             android:text="Get notification for tornaments news, posts and game updates"
             tools:text="On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain. These cases are perfectly simple and easy to distinguish. In a free hour, when our power of choice is untrammelled and when nothing prevents our being able to do what we like best, every pleasure is to be welcomed and every pain avoided. But in certain circumstances and owing to the claims of duty or the obligations of business it will frequently occur that pleasures have to be repudiated and annoyances accepted. The wise man therefore always holds in these matters to this principle of selection: he rejects pleasures to secure other greater pleasures, or else he endures pains to avoid worse pains" />
 
-        <!--        <Switch-->
-        <!--            android:id="@+id/notification_switch"-->
-        <!--            android:layout_width="47dp"-->
-        <!--            android:layout_height="29dp"-->
-        <!--            android:layout_alignParentEnd="true"-->
-        <!--            android:layout_alignParentRight="true"-->
-        <!--            android:layout_centerVertical="true"-->
-        <!--            android:layout_marginEnd="27.3dp"-->
-        <!--            android:layout_marginRight="27.3dp"-->
-        <!--            android:importantForAutofill="yes" />-->
-
         <com.github.angads25.toggle.widget.LabeledSwitch
             android:id="@+id/notification_switch"
             android:layout_width="47dp"
@@ -238,41 +227,3 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
-<!--</layout>-->
-
-<!--<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
-<!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
-<!--    xmlns:tools="http://schemas.android.com/tools"-->
-<!--    android:layout_width="match_parent"-->
-<!--    android:layout_height="match_parent"-->
-<!--    tools:context=".views.gamedetail.GameDetailActivity">-->
-<!--    <com.google.android.material.appbar.AppBarLayout-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:fitsSystemWindows="true">-->
-<!--        <com.google.android.material.appbar.CollapsingToolbarLayout-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:fitsSystemWindows="true"-->
-<!--            app:collapsedTitleGravity="bottom"-->
-<!--            app:title="call of duty"-->
-<!--            app:titleEnabled="true"-->
-<!--            app:layout_scrollFlags="scroll|exitUntilCollapsed|enterAlwaysCollapsed">-->
-
-<!--            <ImageView-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="277dp"-->
-<!--                android:scaleType="centerCrop"-->
-<!--                app:srcCompat="@drawable/call_of_duty" />-->
-<!--            <androidx.appcompat.widget.Toolbar-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="200dp"-->
-<!--                android:layout_gravity="bottom"-->
-<!--                android:background="@color/black_two_70"-->
-<!--                app:layout_collapseMode="pin">-->
-
-<!--            </androidx.appcompat.widget.Toolbar>-->
-
-<!--        </com.google.android.material.appbar.CollapsingToolbarLayout>-->
-<!--    </com.google.android.material.appbar.AppBarLayout>-->
-<!--</androidx.coordinatorlayout.widget.CoordinatorLayout>-->

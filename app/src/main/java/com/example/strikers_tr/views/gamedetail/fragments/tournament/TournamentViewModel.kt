@@ -14,16 +14,9 @@ class TournamentViewModel: ViewModel() {
     private val gameDetailsRepository by lazy {
         GameDetailsRepository.instance
     }
-//    fun fetchGameDetailsData() {
-//        viewModelScope.launch {
-////            isLoadingData.postValue(true)
-//            fillGameDetailsData(gameDetailsRepository.fetchGameDetailsData())
-//        }
-//    }
 
     private fun fillTournamentGameDetailsData(tournamentData: ArrayList<TournamentSection>) {
         tournamentDataLiveData.postValue(tournamentData)
-//        isLoadingData.postValue(false)
     }
 
     fun fetchTournament() {
