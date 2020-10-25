@@ -62,13 +62,6 @@ class TournamentSectionAdapter: RecyclerView.Adapter<RecyclerView.ViewHolder>() 
                 }
                 executePendingBindings()
             }
-            itemView.setOnClickListener {
-                handleOpenGame()
-            }
-        }
-        private fun handleOpenGame() {
-            val chatIntent = Intent(itemView.context, GameDetailActivity::class.java)
-            (itemView.context as AppCompatActivity).startActivity(chatIntent)
         }
     }
 

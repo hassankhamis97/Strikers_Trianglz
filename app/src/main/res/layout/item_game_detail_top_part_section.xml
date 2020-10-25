@@ -27,12 +27,15 @@
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
             android:layout_alignParentLeft="true"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp"
             android:layout_toStartOf="@+id/notification_switch"
             android:layout_toLeftOf="@+id/notification_switch"
             android:ellipsize="end"
             android:fontFamily="@font/cairo"
             android:maxLines="2"
-            android:text="Get notification for tornaments news, posts and game updates" />
+            android:text="Get notification for tornaments news, posts and game updates"
+            tools:text="On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain. These cases are perfectly simple and easy to distinguish. In a free hour, when our power of choice is untrammelled and when nothing prevents our being able to do what we like best, every pleasure is to be welcomed and every pain avoided. But in certain circumstances and owing to the claims of duty or the obligations of business it will frequently occur that pleasures have to be repudiated and annoyances accepted. The wise man therefore always holds in these matters to this principle of selection: he rejects pleasures to secure other greater pleasures, or else he endures pains to avoid worse pains" />
 
         <!--        <Switch-->
         <!--            android:id="@+id/notification_switch"-->
@@ -124,6 +127,8 @@
             android:text="1,390  Followers"
             android:ellipsize="end"
             android:maxLines="1"
+            android:maxWidth="160dp"
+            tools:text="On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain. These cases are perfectly simple and easy to distinguish. In a free hour, when our power of choice is untrammelled and when nothing prevents our being able to do what we like best, every pleasure is to be welcomed and every pain avoided. But in certain circumstances and owing to the claims of duty or the obligations of business it will frequently occur that pleasures have to be repudiated and annoyances accepted. The wise man therefore always holds in these matters to this principle of selection: he rejects pleasures to secure other greater pleasures, or else he endures pains to avoid worse pains"
             android:fontFamily="@font/cairo"/>
 
         <TextView
@@ -131,6 +136,8 @@
             android:layout_height="wrap_content"
             android:src="@drawable/xbox_games"
             android:text="459  Likes"
+            android:maxWidth="160dp"
+            tools:text="On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain. These cases are perfectly simple and easy to distinguish. In a free hour, when our power of choice is untrammelled and when nothing prevents our being able to do what we like best, every pleasure is to be welcomed and every pain avoided. But in certain circumstances and owing to the claims of duty or the obligations of business it will frequently occur that pleasures have to be repudiated and annoyances accepted. The wise man therefore always holds in these matters to this principle of selection: he rejects pleasures to secure other greater pleasures, or else he endures pains to avoid worse pains"
             android:ellipsize="end"
             android:maxLines="1"
             android:fontFamily="@font/cairo"/>
@@ -141,7 +148,7 @@
         android:layout_width="0dp"
         android:layout_height="1dp"
         android:layout_marginTop="7dp"
-        android:background="@color/brown_grey_five"
+        android:background="#99979797"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/followers_layout"
@@ -158,6 +165,8 @@
         android:layout_marginRight="22dp"
         android:background="?attr/selectableItemBackground"
         android:padding="16dp"
+        android:clickable="true"
+        android:focusable="true"
         app:cardCornerRadius="15.4dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -171,7 +180,6 @@
             android:layout_marginStart="16dp"
             android:layout_marginLeft="16dp"
             android:layout_marginBottom="1dp"
-            android:background="?android:attr/actionBarItemBackground"
             app:srcCompat="@drawable/ic_host_tournament" />
 
         <TextView
@@ -180,13 +188,16 @@
             android:layout_gravity="center_vertical"
             android:layout_marginStart="54dp"
             android:layout_marginLeft="54dp"
+            android:layout_marginRight="20dp"
             android:ellipsize="end"
             android:fontFamily="@font/cairo"
             android:maxLines="1"
             android:text="Request to host tournament"
+            tools:text="On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain. These cases are perfectly simple and easy to distinguish. In a free hour, when our power of choice is untrammelled and when nothing prevents our being able to do what we like best, every pleasure is to be welcomed and every pain avoided. But in certain circumstances and owing to the claims of duty or the obligations of business it will frequently occur that pleasures have to be repudiated and annoyances accepted. The wise man therefore always holds in these matters to this principle of selection: he rejects pleasures to secure other greater pleasures, or else he endures pains to avoid worse pains"
             android:textColor="@color/white"
             android:textSize="14.4sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:layout_marginEnd="20dp" />
 
 
     </androidx.cardview.widget.CardView>
@@ -205,15 +216,24 @@
             android:id="@+id/sectionName_textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:layout_marginLeft="24dp"
+            android:layout_marginStart="22dp"
+            android:layout_marginLeft="22dp"
+            android:layout_marginEnd="22dp"
+            android:layout_marginRight="22dp"
+            android:ellipsize="end"
+            android:fontFamily="@font/cairo"
             android:gravity="center_horizontal|center_vertical"
+            android:maxLines="1"
             android:text="@string/top_players_amp_teams"
             android:textAlignment="center"
             android:textColor="@color/white"
             android:textSize="14.4sp"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain. These cases are perfectly simple and easy to distinguish. In a free hour, when our power of choice is untrammelled and when nothing prevents our being able to do what we like best, every pleasure is to be welcomed and every pain avoided. But in certain circumstances and owing to the claims of duty or the obligations of business it will frequently occur that pleasures have to be repudiated and annoyances accepted. The wise man therefore always holds in these matters to this principle of selection: he rejects pleasures to secure other greater pleasures, or else he endures pains to avoid worse pains" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

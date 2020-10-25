@@ -1,14 +1,21 @@
 package com.example.strikers_tr.views.gamedetail
 
+import android.animation.ValueAnimator
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
+import android.view.View
+import android.widget.ImageView
+import android.widget.LinearLayout
+import android.widget.TextView
 import androidx.appcompat.widget.Toolbar
 import androidx.coordinatorlayout.widget.CoordinatorLayout
 import androidx.core.view.ViewCompat
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
@@ -19,8 +26,13 @@ import com.example.strikers_tr.views.gamedetail.adapter.TopPlayersGameDetailAdap
 import com.google.android.material.appbar.AppBarLayout
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
+import kotlin.math.abs
 
-class GameDetailActivity : AppCompatActivity() {
+class GameDetailActivity : AppCompatActivity(), AppBarLayout.OnOffsetChangedListener {
+    private var isHideToolbarView = false
 
     val topPlayers_recyclerView by lazy {
         findViewById<RecyclerView>(R.id.topPlayers_recyclerView)
@@ -31,12 +43,20 @@ class GameDetailActivity : AppCompatActivity() {
     val appbar_profile by lazy {
         findViewById<AppBarLayout>(R.id.appbar_profile)
     }
+    val coordinator by lazy {
+        findViewById<CoordinatorLayout>(R.id.co_profile_activity_root_layout)
+    }
+    val backIV by lazy {
+        findViewById<ImageView>(R.id.back_imageView)
+    }
+    val toolbarBackground_layout  by lazy {
+        findViewById<LinearLayout>(R.id.toolbarBackground_layout)
+    }
+
     val adapter by lazy {
         TopPlayersGameDetailAdapter()
     }
-//    val adapterGD by lazy {
-//        GameDetailAdapter(this)
-//    }
+
     val gameDetailsViewModel by lazy {
         ViewModelProvider(this).get(GameDetailsViewModel::class.java)
     }
@@ -57,10 +77,13 @@ class GameDetailActivity : AppCompatActivity() {
         binding.apply {
             this.gameDetailsVM = gameDetailsViewModel
         }
+        initCollapsingToolbarUi()
         setupViewPagerAndTabLayout()
         setupAdapter()
         gameDetailsViewModel.fetchTopPlayersDetailsData()
-//        gameDetailsViewModel.fetchGameDetailsData()
+        backIV.setOnClickListener {
+            onBackPressed()
+        }
     }
 
     private fun setupViewPagerAndTabLayout() {
@@ -92,5 +115,20 @@ class GameDetailActivity : AppCompatActivity() {
         topPlayers_recyclerView.adapter = adapter
 
     }
-    
+    private fun initCollapsingToolbarUi() {
+        appbar_profile.addOnOffsetChangedListener(this)
+    }
+
+    override fun onOffsetChanged(appBarLayout: AppBarLayout?, verticalOffset: Int) {
+        val maxScroll = appBarLayout!!.totalScrollRange
+        val percentage = abs(verticalOffset).toFloat() / maxScroll.toFloat()
+        toolbar_profile.title = ""
+        Log.i("checkPercentage","${verticalOffset} and percent = $percentage")
+        lifecycleScope.launch(Dispatchers.Main) {
+            toolbarBackground_layout.animate().alpha((percentage*3))
+
+        }
+
+    }
+
 }
